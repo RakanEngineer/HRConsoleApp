@@ -4,7 +4,9 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine("Enter empolyee name");
+            string name = Console.ReadLine();
+            Console.WriteLine($"Welcome to HR System, {name}!");
         }
     }
 }
