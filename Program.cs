@@ -9,6 +9,19 @@ namespace HRConsoleApp
         static void Main(string[] args)
         {
             Console.WriteLine("HR Console Application");
+            Robot robot = new Robot("R2D2",45,25000);
+            string roboName = robot.GetName();
+            Console.WriteLine($"Robot Name: {roboName}\n");
+
+            robot.setName("Test");
+            robot.Age = -5;
+            Console.WriteLine($"Robot Name: {robot.GetName()}\n");
+
+            Robot r1 = new Robot("C3PO", 30, 30000);
+            Console.WriteLine(Robot.Count);
+            Robot r2 = new Robot("WALL-E", 10, 20000);
+            Console.WriteLine(Robot.Count);
+
             Dictionary<string, decimal> employees = new Dictionary<string, decimal>();
             bool running = true;
 
@@ -24,11 +37,11 @@ namespace HRConsoleApp
                 switch (choice)
                 {
                     case "1":
-                        Console.WriteLine("Enter empolyee name");
+                        Console.WriteLine("Enter empolyee name:");
                         string name = Console.ReadLine();
                         //Console.WriteLine($"Welcome to HR System, {name}!");
 
-                        Console.WriteLine("Enter empolyee salary");
+                        Console.WriteLine("Enter empolyee salary:");
                         decimal salary = Convert.ToDecimal(Console.ReadLine());
                         //Console.WriteLine($"Your sallary is {salary:C}");
 
@@ -47,9 +60,7 @@ namespace HRConsoleApp
                         Console.WriteLine("Invalid choice. Please try again.");
                         break;
                 }
-            }
-
-            
+            }           
             
         }
 
