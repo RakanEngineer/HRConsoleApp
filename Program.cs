@@ -33,51 +33,86 @@ namespace HRConsoleApp
             //Employee emp = new Employee("Kalle",25000);
 
             SeedData();
-            Console.ReadKey();
 
-
-            Dictionary<string, decimal> employees = new Dictionary<string, decimal>();
-            bool running = true;
-
-            while (running)
+            do
             {
-                Console.WriteLine("Choose the action you want to do:");
-                Console.WriteLine("1. Add Employee");
-                Console.WriteLine("2. View Employees");
-                Console.WriteLine("3. Exit");
+                ShowMainMenu();
+                string input = Console.ReadLine() ?? string.Empty;
 
-                string choice = Console.ReadLine();
-
-                switch (choice)
+                switch (input)
                 {
                     case "1":
-                        Console.WriteLine("Enter empolyee name:");
-                        string name = Console.ReadLine();
-                        //Console.WriteLine($"Welcome to HR System, {name}!");
-
-                        Console.WriteLine("Enter empolyee salary:");
-                        decimal salary = Convert.ToDecimal(Console.ReadLine());
-                        //Console.WriteLine($"Your sallary is {salary:C}");
-
-                        employees[name] = salary;
-                        Console.WriteLine("Employee added successfully!\n");
                         break;
-
                     case "2":
-                        ViewEmployees(employees);
+                        PrintEmployees();
                         break;
-                    case "3":
-                        running = false;
-                        Environment.Exit(0);
+                    case "Q":
                         break;
                     default:
-                        Console.WriteLine("Invalid choice. Please try again.");
                         break;
                 }
-            }           
-            
+            }
+            while (true);
         }
 
+        private static void PrintEmployees()
+        {
+            List<Employee> employess = payroll.GetEmployees();
+
+            foreach (Employee employee in employess)
+            {
+                Console.WriteLine($"Name {employee.Name} Salary: {employee.Salary}");
+            }
+        }
+
+
+
+
+        //Dictionary<string, decimal> employees = new Dictionary<string, decimal>();
+        //bool running = true;
+
+        //while (running)
+        //{
+        //    Console.WriteLine("Choose the action you want to do:");
+        //    Console.WriteLine("1. Add Employee");
+        //    Console.WriteLine("2. View Employees");
+        //    Console.WriteLine("3. Exit");
+
+        //    string choice = Console.ReadLine();
+
+        //    switch (choice)
+        //    {
+        //        case "1":
+        //            Console.WriteLine("Enter empolyee name:");
+        //            string name = Console.ReadLine();
+        //            //Console.WriteLine($"Welcome to HR System, {name}!");
+
+        //            Console.WriteLine("Enter empolyee salary:");
+        //            decimal salary = Convert.ToDecimal(Console.ReadLine());
+        //            //Console.WriteLine($"Your sallary is {salary:C}");
+
+        //            employees[name] = salary;
+        //            Console.WriteLine("Employee added successfully!\n");
+        //            break;
+
+        //        case "2":
+        //            ViewEmployees(employees);
+        //            break;
+        //        case "3":
+        //            running = false;
+        //            Environment.Exit(0);
+        //            break;
+        //        default:
+        //            Console.WriteLine("Invalid choice. Please try again.");
+        //            break;
+        //    }
+        //}           
+
+        //}
+        private static void ShowMainMenu()
+        {
+            Console.WriteLine($"1.Add {Environment.NewLine}2.Print {Environment.NewLine}Q.Exit");
+        }
         private static void SeedData()
         {
             payroll.AddEmployee("Nisse", 30000);
