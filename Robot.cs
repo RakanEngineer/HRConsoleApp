@@ -24,7 +24,7 @@ namespace HRConsoleApp
             }
         }
         public static int Count { get; set; }
-        public static int Salary { get; }
+        public int Salary { get; }
 
         public void SetSalary(int salary)
         {
@@ -35,7 +35,8 @@ namespace HRConsoleApp
         {
             _name = name;
             Age = age;
-            //Salary = salary;
+            Salary = salary;
+            Count++;
         }
 
         public string GetName()
