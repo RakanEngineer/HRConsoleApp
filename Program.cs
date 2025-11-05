@@ -28,6 +28,11 @@ namespace HRConsoleApp
             //Robot r5 = new Robot("R5", 25, 25000);
             //Console.WriteLine(Robot.Count);
 
+            Payroll payroll = new Payroll();
+            //Employee emp = new Employee("Kalle",25000);
+
+            payroll.AddEmployee("Nisse", 30000);
+
             Dictionary<string, decimal> employees = new Dictionary<string, decimal>();
             bool running = true;
 
