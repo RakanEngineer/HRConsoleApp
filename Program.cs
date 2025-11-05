@@ -6,6 +6,7 @@ namespace HRConsoleApp
 {
     internal class Program
     {
+        private static Payroll payroll = new Payroll();
         static void Main(string[] args)
         {
             Console.WriteLine("HR Console Application");
@@ -31,7 +32,9 @@ namespace HRConsoleApp
             Payroll payroll = new Payroll();
             //Employee emp = new Employee("Kalle",25000);
 
-            payroll.AddEmployee("Nisse", 30000);
+            SeedData();
+            Console.ReadKey();
+
 
             Dictionary<string, decimal> employees = new Dictionary<string, decimal>();
             bool running = true;
@@ -73,6 +76,15 @@ namespace HRConsoleApp
                 }
             }           
             
+        }
+
+        private static void SeedData()
+        {
+            payroll.AddEmployee("Nisse", 30000);
+            payroll.AddEmployee("Anna", 35000);
+            payroll.AddEmployee("Kalle", 40000);
+            payroll.AddEmployee("Stina", 45000);
+            payroll.AddEmployee("Sven", 50000);
         }
 
         private static void ViewEmployees(Dictionary<string, decimal> employees)
