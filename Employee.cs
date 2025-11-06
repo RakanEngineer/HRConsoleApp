@@ -10,5 +10,10 @@
             this.Name = name;
             Salary = salary;
         }
+        public string Print()
+        {
+            return $"Name: {Name}, Salary: {Salary}";
+        }
+        //public override string() { }
     }
 }

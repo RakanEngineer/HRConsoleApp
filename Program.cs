@@ -10,13 +10,13 @@ namespace HRConsoleApp
         static void Main(string[] args)
         {
             Console.WriteLine("HR Console Application");
-            Robot robot = new Robot("R2D2",45,25000);
-            string roboName = robot.GetName();
-            Console.WriteLine($"Robot Name: {roboName}\n");
+            //Robot robot = new Robot("R2D2",45,25000);
+            //string roboName = robot.GetName();
+            //Console.WriteLine($"Robot Name: {roboName}\n");
 
-            robot.setName("Test");
-            robot.Age = -5;
-            Console.WriteLine($"Robot Name: {robot.GetName()}\n");
+            //robot.setName("Test");
+            //robot.Age = -5;
+            //Console.WriteLine($"Robot Name: {robot.GetName()}\n");
 
             //Robot r1 = new Robot("R1", 25, 25000);
             //Console.WriteLine(Robot.Count);
@@ -42,6 +42,7 @@ namespace HRConsoleApp
                 switch (input)
                 {
                     case "1":
+                        AddEmployee();
                         break;
                     case "2":
                         PrintEmployees();
@@ -55,9 +56,33 @@ namespace HRConsoleApp
             while (true);
         }
 
+        private static void AddEmployee()
+        {
+            string empName;
+            bool validName = false;
+
+            do
+            {
+                Console.WriteLine("Enter employee name:");
+                empName = Console.ReadLine() ?? string.Empty;
+                if (string.IsNullOrWhiteSpace(empName))
+                {
+                    Console.WriteLine("Employee name cannot be empty. Please try again.");
+                }
+                else
+                {
+                    validName = true;
+                }
+            } while (!validName);
+
+            Console.WriteLine(empName);
+
+        }
+
         private static void PrintEmployees()
         {
-            List<Employee> employess = payroll.GetEmployees();
+            //List<Employee> employess = payroll.GetEmployees();
+            IEnumerable<Employee> employess = payroll.GetEmployees();
 
             foreach (Employee employee in employess)
             {

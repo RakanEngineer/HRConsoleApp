@@ -15,10 +15,11 @@ namespace HRConsoleApp
             Employee employee = new Employee(name, salary);
             _employees.Add(employee);
         }
-        public List<Employee> GetEmployees()
+        public IEnumerable<Employee> GetEmployees() // Changed from List<Employee> to IEnumerable<Employee>
         {
-            //ToDo: Fix this, not good
-            return _employees;
+            //ToDo: Fix this, not good // practice to return internal list
+            //return _employees;
+            return _employees.ToList();
         }
     }
 }
