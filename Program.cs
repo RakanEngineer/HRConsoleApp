@@ -49,6 +49,7 @@ namespace HRConsoleApp
                         PrintEmployees();
                         break;
                     case "Q":
+                        Environment.Exit(0);
                         break;
                     default:
                         break;
@@ -76,7 +77,8 @@ namespace HRConsoleApp
             //    }
             //} while (!success);
             string empName = Util.AskForString("Name");
-            Console.WriteLine(empName);
+            uint empSalary = Util.AskForUInt("Salary");
+            Console.WriteLine(empName, empSalary);
 
         }
 
@@ -142,11 +144,11 @@ namespace HRConsoleApp
         }
         private static void SeedData()
         {
-            _payroll.AddEmployee("Nisse", 30000);
+            _payroll.AddEmployee("Örjan", 30000);
             _payroll.AddEmployee("Anna", 35000);
             _payroll.AddEmployee("Kalle", 40000);
-            _payroll.AddEmployee("Stina", 45000);
-            _payroll.AddEmployee("Sven", 50000);
+            _payroll.AddEmployee("Åsa", 45000);
+            _payroll.AddEmployee("Åke", 50000);
         }
 
         private static void ViewEmployees(Dictionary<string, decimal> employees)
