@@ -34,6 +34,10 @@ namespace HRConsoleApp
             //Console.WriteLine(Robot.Count);
 
             Payroll payroll = new Payroll();
+            IUI ui = new ConsoleUI();
+
+            Main main = new Main(ui, payroll);
+            main.Run();
             //Employee emp = new Employee("Kalle",25000);
 
             SeedData();
