@@ -9,7 +9,8 @@ namespace HRConsoleApp
     internal class Program
     {
         private static Payroll _payroll = new Payroll();
-        private static ConsoleUI _ui = new();
+        //private static ConsoleUI _ui = new();
+        private static IUI _ui = new ConsoleUI();
         static void Main(string[] args)
         {
             Console.WriteLine("HR Console Application");
