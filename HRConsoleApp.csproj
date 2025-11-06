@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\HRConsoleApp.Abstractions\HRConsoleApp.Abstractions.csproj" />
     <ProjectReference Include="..\HRConsoleApp.Helpers\HRConsoleApp.Helpers.csproj" />
   </ItemGroup>
 

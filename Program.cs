@@ -1,4 +1,5 @@
-﻿using HRConsoleApp.Helpers;
+﻿using HRConsoleApp.Abstractions;
+using HRConsoleApp.Helpers;
 using Microsoft.Win32;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ namespace HRConsoleApp
     internal class Program
     {
         private static Payroll _payroll = new Payroll();
+        private static ConsoleUI _ui = new();
         static void Main(string[] args)
         {
             Console.WriteLine("HR Console Application");
@@ -38,7 +40,7 @@ namespace HRConsoleApp
             do
             {
                 ShowMainMenu();
-                string input = Console.ReadLine() ?? string.Empty;
+                string input = _ui.GetInput(); //Console.ReadLine() ?? string.Empty;
 
                 switch (input)
                 {
@@ -99,7 +101,8 @@ namespace HRConsoleApp
             foreach (Employee employee in employess)
             {
                 //Console.WriteLine($"Name {employee.Name} Salary: {employee.Salary}");
-                Console.WriteLine(employee.Print());
+                //Console.WriteLine(employee.Print());
+                _ui.Print(employee.Print());
             }
         }
 
@@ -150,7 +153,8 @@ namespace HRConsoleApp
         private static void ShowMainMenu()
         {
             //Console.WriteLine($"1.Add {Environment.NewLine}2.Print {Environment.NewLine}Q.Exit");
-            Console.WriteLine($"{MenuHelpers.Add}.Add {Environment.NewLine}{MenuHelpers.Print}.Print {Environment.NewLine}{MenuHelpers.Quit}.Quit");
+            //Console.WriteLine($"{MenuHelpers.Add}.Add {Environment.NewLine}{MenuHelpers.Print}.Print {Environment.NewLine}{MenuHelpers.Quit}.Quit");
+            _ui.Print($"{MenuHelpers.Add}.Add {Environment.NewLine}{MenuHelpers.Print}.Print {Environment.NewLine}{MenuHelpers.Quit}.Quit");
         }
         private static void SeedData()
         {

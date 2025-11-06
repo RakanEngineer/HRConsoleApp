@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRConsoleApp", "HRConsoleAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRConsoleApp.Helpers", "..\HRConsoleApp.Helpers\HRConsoleApp.Helpers.csproj", "{ACD02CC0-AE3F-47BA-A8E6-0075DD78756D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRConsoleApp.Abstractions", "..\HRConsoleApp.Abstractions\HRConsoleApp.Abstractions.csproj", "{C44D1676-335E-4D3B-87EE-062B09E27E69}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{ACD02CC0-AE3F-47BA-A8E6-0075DD78756D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACD02CC0-AE3F-47BA-A8E6-0075DD78756D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACD02CC0-AE3F-47BA-A8E6-0075DD78756D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C44D1676-335E-4D3B-87EE-062B09E27E69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C44D1676-335E-4D3B-87EE-062B09E27E69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C44D1676-335E-4D3B-87EE-062B09E27E69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C44D1676-335E-4D3B-87EE-062B09E27E69}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
