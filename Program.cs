@@ -86,7 +86,8 @@ namespace HRConsoleApp
 
             foreach (Employee employee in employess)
             {
-                Console.WriteLine($"Name {employee.Name} Salary: {employee.Salary}");
+                //Console.WriteLine($"Name {employee.Name} Salary: {employee.Salary}");
+                Console.WriteLine(employee);
             }
         }
 

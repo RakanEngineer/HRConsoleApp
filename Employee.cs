@@ -12,8 +12,12 @@
         }
         public string Print()
         {
-            return $"Name: {Name}, Salary: {Salary}";
+            return $"Name {Name} Salary: {Salary}";
         }
-        //public override string() { }
+
+        //public override string ToString()
+        //{
+        //    return $"Name {Name} Salary: {Salary}";
+        //}
     }
 }
