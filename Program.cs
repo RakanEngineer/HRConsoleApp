@@ -6,7 +6,7 @@ namespace HRConsoleApp
 {
     internal class Program
     {
-        private static Payroll payroll = new Payroll();
+        private static Payroll _payroll = new Payroll();
         static void Main(string[] args)
         {
             Console.WriteLine("HR Console Application");
@@ -59,7 +59,7 @@ namespace HRConsoleApp
         private static void AddEmployee()
         {
             string empName;
-            bool validName = false;
+            bool success = false;
 
             do
             {
@@ -71,9 +71,9 @@ namespace HRConsoleApp
                 }
                 else
                 {
-                    validName = true;
+                    success = true;
                 }
-            } while (!validName);
+            } while (!success);
 
             Console.WriteLine(empName);
 
@@ -82,12 +82,12 @@ namespace HRConsoleApp
         private static void PrintEmployees()
         {
             //List<Employee> employess = payroll.GetEmployees();
-            IEnumerable<Employee> employess = payroll.GetEmployees();
+            IEnumerable<Employee> employess = _payroll.GetEmployees();
 
             foreach (Employee employee in employess)
             {
                 //Console.WriteLine($"Name {employee.Name} Salary: {employee.Salary}");
-                Console.WriteLine(employee);
+                Console.WriteLine(employee.Print());
             }
         }
 
@@ -141,11 +141,11 @@ namespace HRConsoleApp
         }
         private static void SeedData()
         {
-            payroll.AddEmployee("Nisse", 30000);
-            payroll.AddEmployee("Anna", 35000);
-            payroll.AddEmployee("Kalle", 40000);
-            payroll.AddEmployee("Stina", 45000);
-            payroll.AddEmployee("Sven", 50000);
+            _payroll.AddEmployee("Nisse", 30000);
+            _payroll.AddEmployee("Anna", 35000);
+            _payroll.AddEmployee("Kalle", 40000);
+            _payroll.AddEmployee("Stina", 45000);
+            _payroll.AddEmployee("Sven", 50000);
         }
 
         private static void ViewEmployees(Dictionary<string, decimal> employees)
