@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using HRConsoleApp.Helpers;
+using Microsoft.Win32;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -58,23 +59,23 @@ namespace HRConsoleApp
 
         private static void AddEmployee()
         {
-            string empName;
-            bool success = false;
+            //string empName;
+            //bool success = false;
 
-            do
-            {
-                Console.WriteLine("Enter employee name:");
-                empName = Console.ReadLine() ?? string.Empty;
-                if (string.IsNullOrWhiteSpace(empName))
-                {
-                    Console.WriteLine("Employee name cannot be empty. Please try again.");
-                }
-                else
-                {
-                    success = true;
-                }
-            } while (!success);
-
+            //do
+            //{
+            //    Console.WriteLine("Enter employee name:");
+            //    empName = Console.ReadLine() ?? string.Empty;
+            //    if (string.IsNullOrWhiteSpace(empName))
+            //    {
+            //        Console.WriteLine("Employee name cannot be empty. Please try again.");
+            //    }
+            //    else
+            //    {
+            //        success = true;
+            //    }
+            //} while (!success);
+            string empName = Util.AskForString("Name");
             Console.WriteLine(empName);
 
         }
