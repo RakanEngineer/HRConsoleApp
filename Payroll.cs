@@ -1,7 +1,7 @@
 ﻿
 namespace HRConsoleApp
 {
-    internal class Payroll
+    internal class Payroll : IPayroll
     {
         private List<Employee> _employees;
 
@@ -18,8 +18,8 @@ namespace HRConsoleApp
         public IEnumerable<Employee> GetEmployees() // Changed from List<Employee> to IEnumerable<Employee>
         {
             //ToDo: Fix this, not good // practice to return internal list
-            return _employees;
-            //return _employees.ToList();
+            //return _employees;
+            return _employees.ToList();
         }
     }
 }

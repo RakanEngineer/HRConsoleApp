@@ -37,7 +37,26 @@ namespace HRConsoleApp
             IUI ui = new ConsoleUI();
 
             Main main = new Main(ui, payroll);
-            main.Run();
+            //main.Run();
+            try
+            {
+                main.Run();
+
+            }
+            catch (ArgumentException ex)
+            {
+
+                throw;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            finally
+            {
+
+            }
             //Employee emp = new Employee("Kalle",25000);
 
             SeedData();
